@@ -2,42 +2,91 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/faviconn.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="TextUtils is a uitlity which can be used to anipulate ur text as u want"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <!--Bootstrap CSS-->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous"> 
+
+    <title>Text Uils - Home</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
+
+  <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+   crossorigin="anonymous"></script>  
+
 </html>
+
+<!-- JS: class reserved. JSX: className -->
+<!-- JS: for reserved. JSX: htmlFor -->
+<!-- JS: tabindex reserved. JSX: tabIndex -->
+<!-- You can only return 1 tagname(jese <div class>, ya <h1> in jsx. more than 1 krn h to un dono ko ek fragment (i.e. <> </> ) or 
+  div me daalo )-->
+<!-- Why paranthesis after/in return? Kyuki JS vrna automatic semicolon insert krke jsx khrb kr degi -->
+<!-- In JS: anything(say name of a variable which had been declared outside jsx in the js file) put in curly braces is 
+ considered as javascript and will be resolved -->
+<!-- Code me unterminated Jsx content nhi daalna -->
+<!-- Babel compiles JSX down to React.createElement() calls -->
+
+<!-- Navbar ya kuch bootstrap se copy paste krte time, it gives error cuz JS me 
+  open tags ko bhi close krna padta h, jese ki hr tag etc-->
+  <!-- VS code trick: CNTRL+F: to search , and then type, then click the small togle arrow (>) on left of the word 
+    then click replace to replace it with something else. then click on the word what u want to replace in the code
+    and then again click on the word u want to replace it with, next to the arrow, and then keep pressing enter 
+    to replace it. (u have to press enter as many times as the word u want to replace in the code exists, starting
+    from the first time it exists in the code focourse.)  ( OR just click on replace all option (vo jo b ke side me arrow laga kr a hai,
+    vo replace option h aur uske side me jo ac hai, vo replace all option h))
+  in the entire code. EG: We can do this to replace class with className in bootstrap NavBar code-->
+
+  <!-- To be on the safer side, href="#" ko bhi code me har jgh href="/" se replace krdo. React router me vo safe rhta h,
+  vrna warnings de skta hai.-->
+  <!-- Terminal pr u don't have to close and open a new terminal everytime, simply Cntrl C krke bhi terminate
+   batch job pr Y, and continue using the same terminal-->
+   <!-- In package.json, react: "^18.3.1" :tells the version of react being used.-->
+   <!-- The public folder hass files which are publically available to all. don't put ay secret or password 
+    related or credentials related files in this folder .-->
+    <!-- Don't use npm start or npm run start, us npm run build-->
+    <!-- Props: short for properties-->
+    <!-- ES7 React/Redux/GraphQL/React-Native snippets: Is an extension that gives shortcuts, open this extenion in
+    VS code and scroll down to see the shorcuts it gives. EG: imp-> import moduleName from 'module'
+     clg -> console.log(object)-->
+     <!-- When using a function bassed component, u don't need to import react in App.js  (open App.js)-->
+
+    <!-- EG: module2.js :  const a ="Harry; const b ="Rohan"; 
+     const c="Aakash"; const d="Priyanka"; export default c;  and 
+     module1.js   :  import xyz from './module2.js'     console.log(xyz)
+     
+     terminal     :  node .\module1.js   => gives error.
+      Solution: rename module1.js as module1.mjs and module2.js as module2.mjs
+      terminal     :  node .\module1.mjs   => Aakash (ie.e constantc that u ecported bydefault from module 2 in module1) 
+      
+      if, : module2.mjs :  const a ="Harry; const b ="Rohan"; 
+            const c="Aakash"; const d="Priyanka"; export default d;   
+            module1.mjs   :  import xyz from './module2.js'     console.log(xyz)
+            terminal     :  node .\module1.mjs   => Priyanka
+            
+      if,  : module2.mjs :  const a ="Harry; const b ="Rohan"; 
+            const c="Aakash"; const d="Priyanka"; 
+            export default d; export {a}; export{c}; export{d}; 
+            module1.mjs   :  import xyz, {a,c,d} from './module2.js'     
+            console.log(c); console.log(xyz), console.log(a);  
+             terminal     :  node .\module1.mjs   => Aakash Priyanka Harry
+             USE CURLY BRACES TO IMPORT SOMETHING THAT IS 
+             NOT EXPORTED BY DEFAULT FROM SOME OTHER MODULE-->
+      
+    <!-- When using input in reactjs, like class -> className,
+     input tag should be turned into -> a self closing tag-->         
